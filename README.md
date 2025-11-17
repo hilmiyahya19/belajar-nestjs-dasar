@@ -1,98 +1,299 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# **Belajar NestJS Dasar**
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Repository ini berisi latihan dan implementasi konsep dasar **NestJS** yang saya pelajari berdasarkan materi *NestJS Dasar* dari **Programmer Zaman Now (Eko Kurniawan Khannedy)**.
+Project ini saya gunakan untuk memahami fondasi NestJS mulai dari module, controller, routing, provider, dependency injection, middleware, hingga fitur lanjutan seperti guard, interceptor, pipe, dan dynamic module.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+---
 
-## Description
+## 📌 **Apa Itu NestJS?**
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+**NestJS** adalah framework Node.js berbasis **TypeScript** untuk membangun aplikasi server yang modular, scalable, dan terstruktur.
+NestJS memanfaatkan konsep **decorator**, **dependency injection**, dan **module architecture**, sehingga memberikan struktur kerja yang rapi dan mudah dikembangkan.
 
-## Project setup
+Website resmi: [https://nestjs.com](https://nestjs.com)
 
-```bash
-$ npm install
-```
+---
 
-## Compile and run the project
+## 🎯 **Tujuan Pembelajaran**
 
-```bash
-# development
-$ npm run start
+Dalam project ini, saya mempelajari:
 
-# watch mode
-$ npm run start:dev
+* Cara membuat dan menjalankan project NestJS
+* Struktur folder NestJS
+* Penggunaan decorator (`@Controller`, `@Get`, `@Post`, dll.)
+* Module dan arsitektur modular
+* Routing dan HTTP Method
+* Request & Response handling
+* Middleware
+* Exception Filter
+* Provider & Service
+* Dependency Injection
+* Custom Provider (Factory, Value, Class, Alias)
+* Guard (authentication & authorization)
+* Pipe (validation & transform)
+* Interceptor (response transform)
+* Custom Decorator
+* Integrasi database menggunakan Prisma
+* Penggunaan Logger (Nest Logger & Winston)
+* Global Provider (Global Guard, Global Filter, dll.)
+* Lifecycle events & shutdown hook
 
-# production mode
-$ npm run start:prod
-```
+---
 
-## Run tests
+## 🚀 **Cara Menginstall dan Menjalankan Project**
+
+### **1. Install NestJS CLI**
 
 ```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+npm install -g @nestjs/cli
 ```
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+### **2. Install Dependency**
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+npm install
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+### **3. Menjalankan Aplikasi**
 
-## Resources
+Mode development:
 
-Check out a few resources that may come in handy when working with NestJS:
+```bash
+npm run start:dev
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+Mode production:
 
-## Support
+```bash
+npm run build
+npm run start:prod
+```
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### **4. Menjalankan Test**
 
-## Stay in touch
+Unit test:
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+```bash
+npm run test
+```
 
-## License
+E2E test:
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+```bash
+npm run test:e2e
+```
+
+---
+
+## 🧱 **Struktur Folder Dasar**
+
+```
+src/
+ ├── app.module.ts      # Root module
+ ├── main.ts            # Entry point aplikasi
+ ├── controllers/       # Semua controller
+ ├── services/          # Semua provider/service
+ ├── middleware/        # Custom middleware
+ ├── interceptors/      # Custom interceptor
+ ├── guards/            # Guard (authorization)
+ ├── pipes/             # Pipe (validation/transform)
+ ├── filters/           # Exception filters
+ └── modules/           # Module tambahan
+test/
+ ├── unit test
+ └── e2e test
+```
+
+---
+
+## 🧩 **Konsep Dasar NestJS yang Saya Pelajari**
+
+### 🔹 **1. Module**
+
+NestJS sangat mengandalkan modularitas.
+Saya biasa membuat module sesuai fitur.
+
+```ts
+@Module({
+  imports: [],
+  controllers: [UserController],
+  providers: [UserService],
+})
+export class UserModule {}
+```
+
+---
+
+### 🔹 **2. Controller**
+
+Controller menangani request dan mengembalikan response.
+
+```ts
+@Controller('/api/users')
+export class UserController {
+  @Get()
+  findAll(): string {
+    return 'Get all users';
+  }
+
+  @Post()
+  create(): string {
+    return 'Create user';
+  }
+}
+```
+
+---
+
+### 🔹 **3. Routing dengan Decorator**
+
+Nest menyediakan decorator routing:
+
+* `@Get()`
+* `@Post()`
+* `@Put()`
+* `@Delete()`
+* `@Patch()`
+* `@Options()`
+* `@Head()`
+* `@All()`
+
+---
+
+### 🔹 **4. Request Handling**
+
+Mengambil data request dengan decorator:
+
+* `@Param()`
+* `@Body()`
+* `@Query()`
+* `@Headers()`
+* `@Req()`
+* `@Ip()`
+
+---
+
+### 🔹 **5. Response Handling**
+
+Default return → response body.
+Jika butuh kontrol lebih:
+
+* `@Res()`
+* `@HttpCode()`
+* `@Header()`
+* `@Redirect()`
+
+---
+
+### 🔹 **6. Provider & Service**
+
+Tempat untuk business logic.
+
+```ts
+@Injectable()
+export class UserService {
+  findAll() {
+    return ['eko', 'budi'];
+  }
+}
+```
+
+---
+
+### 🔹 **7. Dependency Injection**
+
+NestJS mendukung constructor-based DI.
+
+```ts
+constructor(private userService: UserService) {}
+```
+
+---
+
+### 🔹 **8. Middleware**
+
+```ts
+@Injectable()
+export class LogMiddleware implements NestMiddleware {
+  use(req: Request, res: Response, next: Function) {
+    console.log('Request logged');
+    next();
+  }
+}
+```
+
+---
+
+### 🔹 **9. Exception Filter**
+
+Untuk menangani error dengan format custom.
+
+---
+
+### 🔹 **10. Pipe**
+
+Digunakan untuk transformasi dan validasi input.
+
+---
+
+### 🔹 **11. Guard**
+
+Digunakan untuk authorization (misalnya role-guard).
+
+---
+
+### 🔹 **12. Interceptor**
+
+Modifikasi response sebelum dikembalikan ke client.
+
+---
+
+### 🔹 **13. Custom Decorator**
+
+Untuk mengambil data tertentu dari request (misalnya user).
+
+---
+
+### 🔹 **14. Integrasi Prisma**
+
+NestJS sangat mudah digunakan bersama Prisma.
+
+---
+
+### 🔹 **15. Logging**
+
+Saya bisa mengganti logger default Nest ke **Winston**.
+
+---
+
+### 🔹 **16. Global Provider**
+
+Bisa membuat Guard/Pipe/Filter/Interceptor menjadi global.
+
+---
+
+### 🔹 **17. Lifecycle Hook**
+
+Seperti:
+
+* `OnModuleInit`
+* `OnModuleDestroy`
+* `BeforeApplicationShutdown`
+* `OnApplicationShutdown`
+
+---
+
+## 📚 **Referensi**
+
+* [https://nestjs.com](https://nestjs.com)
+* [https://github.com/nestjs/nest](https://github.com/nestjs/nest)
+* Programmer Zaman Now (YouTube & Website)
+
+---
+
+## 🏁 **Penutup**
+
+Repository ini saya buat untuk mendokumentasikan proses belajar saya dalam memahami konsep–konsep dasar hingga menengah di NestJS.
+Dengan memahami fondasi ini, saya berharap bisa membangun aplikasi backend yang lebih terstruktur, scalable, dan mudah dirawat menggunakan NestJS.
+
+---
