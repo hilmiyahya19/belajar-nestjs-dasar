@@ -7,11 +7,33 @@ import {
   Post,
   Query,
   Redirect,
+  Req,
+  Res,
 } from '@nestjs/common';
 import type { HttpRedirectResponse } from '@nestjs/common';
+import { type Request, type Response } from 'express';
 
 @Controller('/api/users')
 export class UserController {
+  @Get('view/hello')
+  viewHello(@Query('name') name: string, @Res() response: Response) {
+    response.render('index.html', {
+      title: 'Template Engine',
+      name: name,
+    });
+  }
+
+  @Get('set-cookie')
+  setCookie(@Query('name') name: string, @Res() response: Response) {
+    response.cookie('name', name);
+    response.status(200).send('Success set cookie');
+  }
+
+  @Get('get-cookie')
+  getCookie(@Req() request: Request): string {
+    return request.cookies['name'];
+  }
+
   // Http Response menggunakan decorator @header untuk menambahkan header, @HttpCode untuk menambahkan http status code
   @Get('/sample-response')
   @Header('Content-Type', 'application/json')
@@ -39,12 +61,12 @@ export class UserController {
     };
   }
 
-  // Http Request Query menggunakan decorator @Query
+  // Http Request Query menggunakan decorator @Query + asynchronous
   @Get('/hello')
-  sayHello(
+  async sayHello(
     @Query('first_name') firstName: string,
     @Query('last_name') lastName: string,
-  ): string {
+  ): Promise<string> {
     return `Hello ${firstName} ${lastName}`;
   }
 
